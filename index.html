@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    
+    <title>Quotes-App</title>
+    <style>
+      body {
+  background: -webkit-linear-gradient(
+    to right,
+    #25d366,
+    #00acee
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #25d366,
+    #00acee
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.whatnav {
+  background-color: transparent;
+  font-size: large;
+  padding: 15px;
+  color: beige;
+  font-weight: 500;
+  letter-spacing: 1mm;
+  cursor: pointer;
+  border: 2px solid beige;
+}
+.twinav {
+  cursor: pointer;
+  border: 2px solid beige;
+  background-color: transparent;
+  font-size: large;
+  padding: 15px;
+  color: beige;
+  font-weight: 500;
+  letter-spacing: 1mm;
+}
+.main {
+  height: 55vh;
+  width: 45vw;
+  /* background-color: #00acee;*/
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid beige;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.main2 {
+  height: 55vh;
+  width: 45vw;
+  /* background-color: #25d366;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid beige;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button {
+  color: beige;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 1mm;
+  margin: 4px 2px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: transparent;
+}
+.button1 {
+  border: 2px solid beige;
+}
+
+.button1:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button2 {
+  border: 2px solid beige;
+}
+
+.button2:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fa-quote-left {
+  color: beige;
+  margin: 5% 0% 0% 5%;
+}
+#text,
+#text1 {
+  margin-left: 12%;
+  color: beige;
+  font-size: large;
+  font-weight: 500;
+  letter-spacing: 0.2mm;
+  font-style: italic;
+}
+.fa-tilde {
+  color: beige;
+  font-weight: 400;
+}
+#author,
+#author1 {
+  text-align: end;
+  color: beige;
+  font-size: medium;
+  font-weight: 500;
+  letter-spacing: 0.2mm;
+  font-style: italic;
+  padding-right: 20px;
+}
+.fa-twitter,
+.fa-whatsapp {
+  color: beige;
+  font-weight: 400;
+}
+#send,
+#post {
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="whatsapp" class="col-6 text-center whatnav">
+          <i class="fab fa-whatsapp"></i>&nbsp;WHATSAPP
+        </div>
+        <div id="twitter" class="col-6 text-center twinav">
+          <i class="fab fa-twitter"></i>&nbsp;TWITTER
+        </div>
+      </div>
+    </div>
+    <div id="m" class="main container">
+      <button id="button1" class="button button1">NEW QUOTE</button>
+      <i class="far fa-2x fa-quote-left"></i>
+      <p id="text"></p>
+      <p id="author"></p>
+      <center><i id="post" title="Post on Twitter"class="fab fa-3x fa-twitter"></i></center>
+      
+    </div>
+    <div id="m2" class="main2 container">
+      <button id="button2" class="button button2">NEW QUOTE</button>
+      <i class="far fa-2x fa-quote-left"></i>
+      <p id="text1"></p>
+      <p id="author1"></p>
+      <center><i id="send" title="Send on Whatsapp"class="fab fa-3x fa-whatsapp"></i></center>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let api,data,real,auth,tex;
+      var whatsapp = document.getElementById("whatsapp");
+      var twitter = document.getElementById("twitter");
+      var main = document.getElementById("m");
+      var main2 = document.getElementById("m2");
+      var text=document.getElementById("text");
+      var text1=document.getElementById("text1");
+      var btn1=document.getElementById("button1");
+      var btn2=document.getElementById("button2");
+      var author=document.getElementById("author");
+      var author1=document.getElementById("author1");
+      var send=document.getElementById("send");
+      var post=document.getElementById("post");
+      whatsapp.addEventListener("click", () => {
+        main.style.display ="none";
+        main2.style.display ="block";
+      });
+      twitter.addEventListener("click", () => {
+        main2.style.display ="none";
+        main.style.display ="block";
+      });
+      const fetchQuotes=async()=>{
+         api="https://type.fit/api/quotes";
+         data= await fetch(api);
+         real= await data.json();
+
+         getQuotes();
+      }
+      const getQuotes=()=>{  
+          let len=real.length-1;
+          let index=Math.floor(Math.random()*len);
+          text.innerHTML=real[index].text;
+          text1.innerHTML=real[index].text;
+          tex=real[index].text;
+          auth=(real[index].author==null)?"UnKnown":real[index].author;
+          author.innerHTML=`<i class="far fa-tilde"></i>&nbsp;${auth}`;
+          author1.innerHTML=`<i class="far fa-tilde"></i>&nbsp;${auth}`;
+          
+      }
+      btn1.addEventListener('click',getQuotes);
+      btn2.addEventListener('click',getQuotes);
+      fetchQuotes();
+     
+     
+       const tweet=()=>{
+           let link=`https://twitter.com/intent/tweet?text=${tex} ~ ${auth}`;
+           window.open(link);
+       }      
+       const whats=()=>{
+           let number=prompt("Enter Phone Number starting from Country Code\ne.g->+917347467673");
+           let link=`https://wa.me/${number}?text=${tex} ~ ${auth}`;
+           window.open(link);
+       }
+       post.addEventListener('click',tweet);
+       send.addEventListener('click',whats);
+    </script>
+  </body>
+</html>
